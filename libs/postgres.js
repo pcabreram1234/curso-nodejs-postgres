@@ -1,12 +1,13 @@
 const { Client } = require('pg');
+const { config } = require('../config/config');
 
 async function getConnection() {
   const client = new Client({
-    host: 'localhost',
-    port: 5432,
-    user: 'pcabreram',
-    password: 'root',
-    database: 'my_store',
+    database: config.dbName,
+    host: config.dbHost,
+    user: config.dbUser,
+    port: config.dbPort,
+    password: config.dbPassword,
   });
   await client.connect();
   return client;
