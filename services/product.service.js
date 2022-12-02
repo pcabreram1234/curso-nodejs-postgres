@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const faker = require('faker');
 const boom = require('@hapi/boom');
 
@@ -67,6 +68,31 @@ class ProductsService {
     return { id };
   }
 
+=======
+const { models } = require('../libs/sequelize');
+
+class ProductsService {
+  async create(data) {
+    const rta = await models.Product.create(data);
+    return rta;
+  }
+
+  async find() {
+    const rta = await models.Product.findAll();
+    return rta;
+  }
+
+  async findOne(id) {
+    const rta = await models.Product.findByPk(id);
+    return rta;
+  }
+
+  async update(id, changes) {
+    
+  }
+
+  async delete(id) {}
+>>>>>>> 11eb9ce774d4c85b77d6d41a59dcd7b65435f8dd
 }
 
 module.exports = ProductsService;

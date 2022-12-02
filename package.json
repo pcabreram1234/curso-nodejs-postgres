@@ -6,7 +6,17 @@
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
+<<<<<<< HEAD
     "lint": "eslint"
+=======
+    "lint": "eslint",
+    "migrations:generate": "sequelize-cli migration:generate --name",
+    "migrations:run": "sequelize-cli db:migrate",
+    "migrations:revert": "sequelize-cli db:migrate:undo",
+    "migrations:delete": "sequelize-cli db:migrate:undo:all",
+    "seeders:generate": "sequelize-cli seed:generate --name",
+    "seeders:run": "sequelize-cli db:seed:all"
+>>>>>>> 11eb9ce774d4c85b77d6d41a59dcd7b65435f8dd
   },
   "keywords": [],
   "author": "",
@@ -16,14 +26,28 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.1",
     "nodemon": "^2.0.12",
+<<<<<<< HEAD
     "prettier": "^2.3.2"
+=======
+    "prettier": "^2.3.2",
+    "sequelize-cli": "^6.4.1"
+>>>>>>> 11eb9ce774d4c85b77d6d41a59dcd7b65435f8dd
   },
   "dependencies": {
     "@hapi/boom": "^9.1.4",
     "cors": "^2.8.5",
+<<<<<<< HEAD
     "express": "^4.17.1",
     "faker": "^5.5.3",
     "joi": "^17.4.2"
+=======
+    "dotenv": "^16.0.1",
+    "express": "^4.17.1",
+    "faker": "^5.5.3",
+    "joi": "^17.4.2",
+    "pg": "^8.7.3",
+    "sequelize": "^6.23.0"
+>>>>>>> 11eb9ce774d4c85b77d6d41a59dcd7b65435f8dd
   },
   "engines": {
     "node": "14.x"

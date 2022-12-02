@@ -2,7 +2,15 @@ const express = require('express');
 
 const CategoryService = require('./../services/category.service');
 const validatorHandler = require('./../middlewares/validator.handler');
+<<<<<<< HEAD
 const { createCategorySchema, updateCategorySchema, getCategorySchema } = require('./../schemas/category.schema');
+=======
+const {
+  createCategorySchema,
+  updateCategorySchema,
+  getCategorySchema,
+} = require('./../schemas/category.schema');
+>>>>>>> 11eb9ce774d4c85b77d6d41a59dcd7b65435f8dd
 
 const router = express.Router();
 const service = new CategoryService();
@@ -16,7 +24,12 @@ router.get('/', async (req, res, next) => {
   }
 });
 
+<<<<<<< HEAD
 router.get('/:id',
+=======
+router.get(
+  '/:id',
+>>>>>>> 11eb9ce774d4c85b77d6d41a59dcd7b65435f8dd
   validatorHandler(getCategorySchema, 'params'),
   async (req, res, next) => {
     try {
@@ -29,7 +42,12 @@ router.get('/:id',
   }
 );
 
+<<<<<<< HEAD
 router.post('/',
+=======
+router.post(
+  '/',
+>>>>>>> 11eb9ce774d4c85b77d6d41a59dcd7b65435f8dd
   validatorHandler(createCategorySchema, 'body'),
   async (req, res, next) => {
     try {
@@ -42,7 +60,12 @@ router.post('/',
   }
 );
 
+<<<<<<< HEAD
 router.patch('/:id',
+=======
+router.patch(
+  '/:id',
+>>>>>>> 11eb9ce774d4c85b77d6d41a59dcd7b65435f8dd
   validatorHandler(getCategorySchema, 'params'),
   validatorHandler(updateCategorySchema, 'body'),
   async (req, res, next) => {
@@ -57,13 +80,23 @@ router.patch('/:id',
   }
 );
 
+<<<<<<< HEAD
 router.delete('/:id',
+=======
+router.delete(
+  '/:id',
+>>>>>>> 11eb9ce774d4c85b77d6d41a59dcd7b65435f8dd
   validatorHandler(getCategorySchema, 'params'),
   async (req, res, next) => {
     try {
       const { id } = req.params;
+<<<<<<< HEAD
       await service.delete(id);
       res.status(201).json({id});
+=======
+      const category = await service.delete(id);
+      res.json(category);
+>>>>>>> 11eb9ce774d4c85b77d6d41a59dcd7b65435f8dd
     } catch (error) {
       next(error);
     }
