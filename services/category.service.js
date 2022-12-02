@@ -1,26 +1,10 @@
+const { models } = require('../libs/sequelize');
 const boom = require('@hapi/boom');
-const { type } = require('express/lib/response');
-const pool = require('../libs/postgres.pool');
 
 class CategoryService {
-  constructor() {
-    this.pool = pool;
-  }
-
   async create(data) {
-    const { type, available } = data;
-    const values = [type, available];
-    const query =
-      'INSERT INTO categoryservice (type, available) values ($1, $2)';
-    const rta = await this.pool.query(query, values);
-    if (rta.rowCount === 1) {
-      return {
-        ...data,
-        message: 'Categoria creada',
-      };
-    } else {
-      boom.badData('La categoria no pudo ser creada');
-    }
+    const rta = await models.Category.create(data);
+    return rta;
   }
 
   async find() {
